@@ -11,7 +11,9 @@ const corsMiddleWare = require("cors");
 app.use(corsMiddleWare());
 
 const authMiddleWare = require("./auth/middleware");
-// const authRouter = require("./routers/auth");
+const authRouter = require("./routers/auth");
+
+app.use("/", authRouter);
 
 // GET endpoint for testing purposes, can be removed
 app.get("/", (req, res) => {
