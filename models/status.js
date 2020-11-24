@@ -1,32 +1,24 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class campaignImage extends Model {
+  class status extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      campaignImage.belongsTo(models.campaign);
-      campaignImage.belongsTo(models.user);
+      status.belongsTo(models.campaign);
     }
   }
-  campaignImage.init(
+  status.init(
     {
-      imageUrl: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      caption: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
+      title: DataTypes.STRING,
     },
     {
       sequelize,
-      modelName: "campaignImage",
+      modelName: "status",
     }
   );
-  return campaignImage;
+  return status;
 };

@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      profileImage: {
+      profileImageUrl: {
         type: Sequelize.STRING,
       },
       isAdmin: {
