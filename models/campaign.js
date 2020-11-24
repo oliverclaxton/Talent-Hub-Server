@@ -1,48 +1,54 @@
 "use strict";
 const { Model } = require("sequelize");
-const talentcampaign = require("./talentcampaign");
 module.exports = (sequelize, DataTypes) => {
-  class user extends Model {
+  class campaign extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      user.belongsToMany(models.campaign, {
+      campaign.hasMany(models.campaignImage);
+      campaign.belongsToMany(models.user, {
         through: "talentCampaigns",
-        foreignKey: "userId",
+        foreignKey: "campaignId",
       });
-      user.hasMany(models.campaignImage);
+      campaign.belongsTo(models.status);
     }
   }
-  user.init(
+  campaign.init(
     {
-      firstName: {
+      title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      lastName: {
+
+      description: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      email: {
-        type: DataTypes.STRING,
-        unique: true,
+
+      dueDate: {
+        type: DataTypes.DATEONLY,
         allowNull: false,
       },
-      password: {
+
+      briefLink: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      profileImageUrl: DataTypes.STRING,
-      isAdmin: DataTypes.BOOLEAN,
-      isTalent: DataTypes.BOOLEAN,
+
+      contractLink: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+
+      statusId: DataTypes.STRING,
     },
     {
       sequelize,
-      modelName: "user",
+      modelName: "campaign",
     }
   );
-  return user;
+  return campaign;
 };
