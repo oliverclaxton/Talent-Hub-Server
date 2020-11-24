@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       campaign.hasMany(models.campaignImage);
       campaign.belongsToMany(models.user, {
-        through: "talentcampaigns",
+        through: "talentCampaigns",
         foreignKey: "campaignId",
       });
-      campaign.belongsTo(model.status);
+      campaign.belongsTo(models.status);
     }
   }
   campaign.init(
@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
 
-      stauts: DataTypes.STRING,
+      statusId: DataTypes.STRING,
     },
     {
       sequelize,

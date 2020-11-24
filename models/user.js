@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       user.belongsToMany(models.campaign, {
-        through: "talentcampaigns",
+        through: "talentCampaigns",
         foreignKey: "userId",
       });
       user.hasMany(models.campaignImage);
@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      LastName: {
+      lastName: {
         type: DataTypes.STRING,
         allowNull: false,
       },
