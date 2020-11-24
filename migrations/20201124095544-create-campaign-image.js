@@ -1,30 +1,18 @@
 "use strict";
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable("campaigns", {
+    await queryInterface.createTable("campaignImages", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      title: {
+      imageUrl: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      description: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      dueDate: {
-        type: Sequelize.DATEONLY,
-        allowNull: false,
-      },
-      briefLink: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      contractLink: {
+      caption: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -39,6 +27,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable("campaigns");
+    await queryInterface.dropTable("campaignImages");
   },
 };
