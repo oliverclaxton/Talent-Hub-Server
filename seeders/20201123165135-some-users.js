@@ -14,7 +14,8 @@ module.exports = {
           password: bcrypt.hashSync("admin", SALT_ROUNDS),
           isAdmin: true,
           isTalent: false,
-          profileImageUrl: "some url",
+          profileImageUrl:
+            "https://images.unsplash.com/photo-1536164261511-3a17e671d380?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8&auto=format&fit=crop&w=800&q=60",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -25,7 +26,8 @@ module.exports = {
           password: bcrypt.hashSync("talent1", SALT_ROUNDS),
           isAdmin: false,
           isTalent: true,
-          profileImageUrl: "some url",
+          profileImageUrl:
+            "https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHw%3D&auto=format&fit=crop&w=800&q=60",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
