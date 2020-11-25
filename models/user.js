@@ -36,8 +36,15 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       profileImageUrl: DataTypes.STRING,
-      isAdmin: DataTypes.BOOLEAN,
-      isTalent: DataTypes.BOOLEAN,
+
+      isAdmin: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
+      isTalent: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true,
+      },
     },
     {
       sequelize,
