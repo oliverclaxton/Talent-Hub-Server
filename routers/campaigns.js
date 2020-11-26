@@ -84,4 +84,21 @@ router.get("/:campaignId", async (req, res, next) => {
   }
 });
 
+router.delete("/:campaignId", async (req, res, next) => {
+  try {
+    const { campaignId } = req.params;
+    console.log("params are", req.params);
+
+    const toDelete = await Campaign.findByPk(campaignId);
+    if (!toDelete) {
+      res.status(404).send("campaign not found");
+    } else {
+      const deleted = await toDelete.destroy();
+      res.json(deleted);
+    }
+  } catch (e) {
+    next(e);
+  }
+});
+
 module.exports = router;
