@@ -3,8 +3,9 @@ const { Router } = require("express");
 // const { toJWT } = require("../auth/jwt");
 // const authMiddleware = require("../auth/middleware");
 const User = require("../models/").user;
-const Talent = require("../models/").talent;
 const Campaign = require("../models/").campaign;
+const CampaignImage = require("../models").campaignImage;
+
 const router = new Router();
 
 router.get("/", async (req, res, next) => {
@@ -30,7 +31,7 @@ router.get("/:campaignId", async (req, res, next) => {
       return res.status(400).send({ message: "campaign id is not a number" });
     }
     const singleCampaign = await Campaign.findByPk(campaignId, {
-      include: [User],
+      include: [User, CampaignImage],
     });
 
     res.status(200).send(singleCampaign);
