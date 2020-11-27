@@ -6,7 +6,8 @@ module.exports = {
       "campaignImages",
       [
         {
-          imageUrl: "C1 image URL1",
+          imageUrl:
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606466896/lj0vwret3ahylectfpnj.jpg",
           caption: "here is a image of me infront of nothing ",
           campaignId: 1,
           userId: 2,
@@ -14,7 +15,8 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          imageUrl: "C1 image URL2",
+          imageUrl:
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606466896/lj0vwret3ahylectfpnj.jpg",
           caption: "here is a image of me infront of nothing ",
           campaignId: 1,
           userId: 2,
@@ -22,7 +24,8 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          imageUrl: "C2 image URL1",
+          imageUrl:
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606466896/lj0vwret3ahylectfpnj.jpg",
           caption: "here is a image of me infront of nothing ",
           campaignId: 2,
           userId: 3,
@@ -30,7 +33,8 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          imageUrl: "C2 image URL2",
+          imageUrl:
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606466896/lj0vwret3ahylectfpnj.jpg",
           caption: "here is a image of me infront of nothing ",
           campaignId: 2,
           userId: 2,
@@ -38,7 +42,8 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          imageUrl: "C3 image URL2",
+          imageUrl:
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606466896/lj0vwret3ahylectfpnj.jpg",
           caption: "here is a image of me infront of nothing ",
           campaignId: 3,
           userId: 3,
@@ -46,7 +51,8 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          imageUrl: "C3 image URL3",
+          imageUrl:
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606466896/lj0vwret3ahylectfpnj.jpg",
           caption: "here is a image of me infront of nothing ",
           campaignId: 3,
           userId: 3,

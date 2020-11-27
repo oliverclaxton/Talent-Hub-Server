@@ -78,6 +78,27 @@ router.post("/images", async (req, res, next) => {
   }
 });
 
+router.patch("/images", async (req, res, next) => {
+  try {
+    const { caption, id } = req.body;
+
+    const idToFind = parseInt(id);
+
+    console.log("what is req.bodty?", req.body);
+
+    const campaignImage = await CampaignImage.findByPk(idToFind);
+
+    await campaignImage.update({ caption });
+
+    return res
+      .status(201)
+      .send({ message: "campaign imgage updated", campaignImage });
+  } catch (e) {
+    console.log("i am error", e.message);
+    next();
+  }
+});
+
 router.get("/", async (req, res, next) => {
   try {
     const allCampaigns = await Campaign.findAll({
