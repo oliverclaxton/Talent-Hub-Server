@@ -6,8 +6,8 @@ module.exports = {
       "campaigns",
       [
         {
-          title: "DW",
-          description: "take photo of watch",
+          title: "Daniel Wellington",
+          description: "Promoting the latest watch",
           dueDate: new Date("2020-12-25"),
           briefLink: "somelink.somelink",
           contractLink: "somelink.somelink",
@@ -16,7 +16,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          title: "DP",
+          title: "Dorethy Perkins",
           description: "take photo of dress",
           dueDate: new Date("2020-12-15"),
           briefLink: "somelink.somelink",

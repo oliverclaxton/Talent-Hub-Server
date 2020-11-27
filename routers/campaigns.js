@@ -51,6 +51,33 @@ router.post("/", async (req, res, next) => {
   }
 });
 
+router.post("/images", async (req, res, next) => {
+  try {
+    const { imgUrl, userId, campaignId } = req.body;
+
+    console.log("what is req.bodty?", req.body);
+
+    const campaignImage = await CampaignImage.create({
+      imageUrl: imgUrl,
+      userId: userId,
+      campaignId: campaignId,
+    });
+
+    // // console.log("what is talent?", talent);
+    // const talentCampaign = await TalentCampaign.create({
+    //   userId: talent,
+    //   campaignId: campaign.id,
+    // });
+
+    return res
+      .status(201)
+      .send({ message: "campaign imgage created", campaignImage });
+  } catch (e) {
+    console.log("i am error", e.message);
+    next();
+  }
+});
+
 router.get("/", async (req, res, next) => {
   try {
     const allCampaigns = await Campaign.findAll({
@@ -81,6 +108,23 @@ router.get("/:campaignId", async (req, res, next) => {
   } catch (e) {
     console.log("i am error message", e.message);
     next();
+  }
+});
+
+router.delete("/:campaignId", async (req, res, next) => {
+  try {
+    const { campaignId } = req.params;
+    console.log("params are", req.params);
+
+    const toDelete = await Campaign.findByPk(campaignId);
+    if (!toDelete) {
+      res.status(404).send("campaign not found");
+    } else {
+      const deleted = await toDelete.destroy();
+      res.json(deleted);
+    }
+  } catch (e) {
+    next(e);
   }
 });
 
