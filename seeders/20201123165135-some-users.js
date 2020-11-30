@@ -27,7 +27,7 @@ module.exports = {
           isAdmin: false,
           isTalent: true,
           profileImageUrl:
-            "https://i.ytimg.com/vi/o1Y81KHx8ZQ/maxresdefault.jpg",
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606747000/wtk4ybax2j5ygwpaytvu.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -39,7 +39,19 @@ module.exports = {
           isAdmin: false,
           isTalent: true,
           profileImageUrl:
-            "https://pbs.twimg.com/profile_images/1089971114284064768/5StTW47r_400x400.jpg",
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606747696/tjuo5rqcxtbyzu0h3ouh.jpg",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+        {
+          firstName: "Nimi",
+          lastName: "Blackwell",
+          email: "nimi@talent.com",
+          password: bcrypt.hashSync("nimi", SALT_ROUNDS),
+          isAdmin: false,
+          isTalent: true,
+          profileImageUrl:
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606747303/uieyk981yi32rj4aotpw.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -51,7 +63,7 @@ module.exports = {
           isAdmin: false,
           isTalent: true,
           profileImageUrl:
-            "https://cdn.21buttons.com/users/7807b06b3a8042aabd3e3f6b03d5da47.large.jpg",
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606747027/jj71yany7v97ht8qhhhl.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -63,7 +75,7 @@ module.exports = {
           isAdmin: false,
           isTalent: true,
           profileImageUrl:
-            "https://static1.squarespace.com/static/5e7a512b0ccef5071eeb0c8c/5e7a51a7b8ae72565edb086b/5e7a51a7b8ae72565edb08b6/1586944174717/NINA+POST+1.jpeg?format=1500w",
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606747114/zbmh38jn82nwj9qlsdxq.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
@@ -75,7 +87,7 @@ module.exports = {
           isAdmin: false,
           isTalent: true,
           profileImageUrl:
-            "https://cdn.21buttons.com/posts/640x800/df411c88385d4293a207f1723e05d7c6_1080x1350.jpg",
+            "http://res.cloudinary.com/drzludyk5/image/upload/v1606747143/ykyjjwlyxousytghxl9g.jpg",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
