@@ -16,7 +16,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          title: "Incomplete",
+          title: "Approved",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

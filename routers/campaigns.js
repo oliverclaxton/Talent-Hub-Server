@@ -63,12 +63,6 @@ router.post("/images", async (req, res, next) => {
       campaignId: campaignId,
     });
 
-    // // console.log("what is talent?", talent);
-    // const talentCampaign = await TalentCampaign.create({
-    //   userId: talent,
-    //   campaignId: campaign.id,
-    // });
-
     return res
       .status(201)
       .send({ message: "campaign imgage created", campaignImage });
@@ -93,6 +87,28 @@ router.patch("/images", async (req, res, next) => {
     return res
       .status(201)
       .send({ message: "campaign imgage updated", campaignImage });
+  } catch (e) {
+    console.log("i am error", e.message);
+    next();
+  }
+});
+
+router.patch("/", async (req, res, next) => {
+  try {
+    const { statusId, campaignId } = req.body;
+
+    const idToFind = parseInt(campaignId);
+    const idToChange = parseInt(statusId);
+
+    console.log("what is req.bodty?", req.body);
+
+    const campaignStatus = await Campaign.findByPk(idToFind);
+
+    await campaignStatus.update({ statusId: idToChange });
+
+    return res
+      .status(201)
+      .send({ message: "campaign status updated", campaignStatus });
   } catch (e) {
     console.log("i am error", e.message);
     next();
