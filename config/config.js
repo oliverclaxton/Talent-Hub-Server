@@ -12,7 +12,7 @@ module.exports = {
     dialect: "mysql",
   },
   production: {
-    use_env_variable: process.env.ELEPHANT_SQL,
+    use_env_variable: process.env.DATABASE_URL,
     dialect: "postgres",
   },
 };
