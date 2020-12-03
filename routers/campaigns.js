@@ -148,6 +148,24 @@ router.get("/:campaignId", async (req, res, next) => {
   }
 });
 
+router.delete("/images", async (req, res, next) => {
+  try {
+    const { id } = req.body;
+    console.log("req body is ", req.body, id);
+
+    const toDelete = await CampaignImage.findByPk(id);
+
+    if (!toDelete) {
+      res.status(404).send("campaign image not found");
+    } else {
+      const deleted = await toDelete.destroy();
+      res.json(deleted);
+    }
+  } catch (e) {
+    next(e);
+  }
+});
+
 router.delete("/:campaignId", async (req, res, next) => {
   try {
     const { campaignId } = req.params;
